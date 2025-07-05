@@ -1673,6 +1673,264 @@
           border-radius: 3px;
         }
       }
+
+      /* Download/Add to Home Screen Styles */
+      .download-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .download-icon:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        background: linear-gradient(135deg, #45a049, #4CAF50);
+      }
+
+      .download-icon i {
+        font-size: 16px;
+        transition: transform 0.3s ease;
+      }
+
+      .download-icon:hover i {
+        transform: scale(1.1);
+      }
+
+      /* Add to Home Screen Modal */
+      .add-to-home-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      .add-to-home-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        position: relative;
+        transform: scale(0.7) translateY(50px);
+        transition: all 0.3s ease;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .add-to-home-modal.active .modal-content {
+        transform: scale(1) translateY(0);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #666;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .modal-close:hover {
+        color: #333;
+      }
+
+      .modal-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 32px;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .modal-text {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+
+      .install-steps {
+        text-align: left;
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .install-steps h4 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .install-steps ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .install-steps li {
+        margin-bottom: 8px;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      .platform-tabs {
+        display: flex;
+        background: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      .platform-tab {
+        flex: 1;
+        padding: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        color: #666;
+      }
+
+      .platform-tab.active {
+        background: #4CAF50;
+        color: white;
+      }
+
+      .platform-content {
+        display: none;
+      }
+
+      .platform-content.active {
+        display: block;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .modal-btn {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .modal-btn-primary {
+        background: #4CAF50;
+        color: white;
+      }
+
+      .modal-btn-primary:hover {
+        background: #45a049;
+        transform: translateY(-1px);
+      }
+
+      .modal-btn-secondary {
+        background: #f0f0f0;
+        color: #666;
+      }
+
+      .modal-btn-secondary:hover {
+        background: #e0e0e0;
+        color: #555;
+      }
+
+      /* Responsive Design for Modal */
+      @media (max-width: 768px) {
+        .modal-content {
+          padding: 25px 20px;
+          margin: 20px;
+        }
+
+        .modal-title {
+          font-size: 1.3rem;
+        }
+
+        .modal-text {
+          font-size: 0.95rem;
+        }
+
+        .modal-buttons {
+          flex-direction: column;
+        }
+
+        .download-icon {
+          width: 35px;
+          height: 35px;
+        }
+
+        .download-icon i {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .modal-content {
+          width: 95%;
+          padding: 20px 15px;
+        }
+
+        .modal-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 24px;
+        }
+
+        .install-steps {
+          padding: 15px;
+        }
+      }
     </style>
   </head>
 
@@ -1730,6 +1988,9 @@
       <div class="header-right">
         <div class="mobile-search-icon" onclick="toggleMobileSearch()">
           <i class="fas fa-search"></i>
+        </div>
+        <div class="download-icon" onclick="testDownloadButton()" title="Add to Home Screen">
+          <i class="fas fa-download"></i>
         </div>
         <div class="user-icon-container">
           <i class="fas fa-user"></i>
@@ -1898,8 +2159,7 @@
             </div>
             <h3>Shop Products</h3>
             <p>
-              Browse our premium collection of custom college merchandise and
-              student apparel
+              Browse our premium collection for Campus Fashion
             </p>
             <div class="quick-nav-arrow">
               <i class="fas fa-arrow-right"></i>
@@ -1960,7 +2220,7 @@
         <button class="category-btn active" data-category="all">
           All Products
         </button>
-        <button class="category-btn" data-category="casuals">Casuals</button>
+        <button class="category-btn" data-category="Casuals">Casuals</button>
         <button class="category-btn" data-category="college-formals">
           College Formals
         </button>
@@ -2571,9 +2831,85 @@
       </div>
     </div>
 
+    <!-- Add to Home Screen Modal -->
+    <div class="add-to-home-modal" id="addToHomeModal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeAddToHomeModal()" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        
+        <h3 class="modal-title">Add Slayyin to Your Home Screen</h3>
+        <p class="modal-text">
+          Install Slayyin for quick access to custom college merchandise and campus essentials!
+        </p>
+
+        <div class="platform-tabs">
+          <button class="platform-tab active" onclick="showPlatform('ios')">
+            <i class="fab fa-apple"></i> iOS
+          </button>
+          <button class="platform-tab" onclick="showPlatform('android')">
+            <i class="fab fa-android"></i> Android
+          </button>
+          <button class="platform-tab" onclick="showPlatform('desktop')">
+            <i class="fas fa-desktop"></i> Desktop
+          </button>
+        </div>
+
+        <div class="platform-content active" id="ios-content">
+          <div class="install-steps">
+            <h4>For iPhone/iPad (Safari):</h4>
+            <ol>
+              <li>Tap the <strong>Share</strong> button <i class="fas fa-share" style="color: #007AFF;"></i></li>
+              <li>Scroll down and tap <strong>"Add to Home Screen"</strong></li>
+              <li>Tap <strong>"Add"</strong> to confirm</li>
+              <li>Find the Slayyin app on your home screen!</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="platform-content" id="android-content">
+          <div class="install-steps">
+            <h4>For Android (Chrome):</h4>
+            <ol>
+              <li>Tap the <strong>Menu</strong> button <i class="fas fa-ellipsis-v" style="color: #4285F4;"></i></li>
+              <li>Select <strong>"Add to Home screen"</strong></li>
+              <li>Enter a name and tap <strong>"Add"</strong></li>
+              <li>Find the Slayyin app on your home screen!</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="platform-content" id="desktop-content">
+          <div class="install-steps">
+            <h4>For Desktop (Chrome/Edge):</h4>
+            <ol>
+              <li>Click the <strong>Install</strong> button in the address bar</li>
+              <li>Or click <strong>Menu</strong> → <strong>"Install Slayyin"</strong></li>
+              <li>Click <strong>"Install"</strong> to confirm</li>
+              <li>Access Slayyin from your desktop!</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button class="modal-btn modal-btn-primary" onclick="closeAddToHomeModal()">
+            Got it!
+          </button>
+          <button class="modal-btn modal-btn-secondary" onclick="closeAddToHomeModal()">
+            Maybe Later
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Remove references to missing files -->
 
     <script src="custom-merch.js"></script>
+    <script src="products.js"></script>
 
     <script>
       document.querySelectorAll(".faq-question").forEach((button) => {
@@ -2585,572 +2921,20 @@
     </script>
 
     <script>
-      // Product data
-      const products = [
-        {
-          id: "1001",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "slayyin-black-tshirt 1.png",
-            "black-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1003",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "black-tshirt 5.png",
-            "slayyin-black-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1004",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "black-tshirt 3.png",
-            "slayyin-black-tshirt 4.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1005",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "black-tshirt 2.png",
-            "black-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1006",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "black-tshirt 1.png",
-            "black-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1002",
-          name: "Classic White T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "slayyin-white-tshirt oversized 1.png",
-            "slayyin-white-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1007",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "slayyin-white-tshirt oversized 2.png",
-            "black-tshirt 1.png",
-            "black-tshirt 4.png",
-            "black-tshirt 3.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1015",
-          name: "College ID Card Holder",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "slayyin-white-tshirt oversized 4.png",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-
-        {
-          id: "1008",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "blazer black.png",
-            "blazer blue.png",
-            "blazer brown.png",
-            "blazer green.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1009",
-          name: "Classic Black T-Shirt Oversized",
-          price: 599,
-          salePrice: 499,
-          images: [
-            "blazer blue.png",
-            "blazer black.png",
-            "blazer brown.png",
-            "blazer green.png",
-          ],
-          category: "Casuals",
-          description:
-            "Premium quality black t-shirt with a comfortable fit. Perfect for everyday wear.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Black"],
-          material: "100% Cotton",
-        },
-
-        {
-          id: "1010",
-          name: "Urban Hoodie",
-          price: 1299,
-          salePrice: 999,
-          images: [
-            "blazer brown.png",
-            "blazer black.png",
-            "blazer blue.png",
-            "blazer green.png",
-          ],
-          category: "Casuals",
-          description:
-            "Stylish urban hoodie with modern design. Great for casual outings.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Gray", "Black"],
-          material: "80% Cotton, 20% Polyester",
-        },
-        {
-          id: "1011",
-          name: "College Blazer",
-          price: 2499,
-          salePrice: 1999,
-          images: [
-            "blazer green.png",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-formals",
-          description:
-            "Professional college blazer with embroidered logo. Perfect for formal events.",
-          sizes: ["S", "M", "L", "XL"],
-          colors: ["Navy", "Black"],
-          material: "Premium Wool Blend",
-        },
-        {
-          id: "1012",
-          name: "College ID Card Holder",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "product-idcard.png",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-
-        {
-          id: "1013",
-          name: "College ID Card Holder",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "product-cap.png",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-
-        {
-          id: "1014",
-          name: "College ID Card Holder by Slayyin College ID Card Holder by Slayyin",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "product-mug.png",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-
-        {
-          id: "4",
-          name: "College ID Card Holder",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-
-        {
-          id: "4",
-          name: "College ID Card Holder",
-          price: 299,
-          salePrice: 249,
-          images: [
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-            "hoopers-showcase.jpg",
-          ],
-          category: "college-utility",
-          description:
-            "Durable ID card holder with lanyard. Essential college accessory.",
-          sizes: ["One Size"],
-          colors: ["Black", "Blue"],
-          material: "Premium PVC",
-        },
-      ];
-
-      // Load products function
-      function loadProducts(category = "all") {
-        const productsContainer = document.getElementById("productsContainer");
-        const seeMoreSection = document.getElementById("seeMoreSection");
-
-        if (!productsContainer) {
-          console.error("Products container not found");
-          return;
-        }
-
-        productsContainer.innerHTML = ""; // Clear existing products
-
-        const filteredProducts =
-          category === "all"
-            ? products
-            : products.filter((product) => product.category === category);
-
-        // Show/hide "See More" button based on product count and screen size
-        // Desktop: 4 columns, Tablet/Mobile: 2 columns
-        const getColumnsPerRow = () => {
-          if (window.innerWidth <= 768) return 2; // Mobile/Tablet: 2 columns
-          return 4; // Desktop: 4 columns
-        };
-
-        const columnsPerRow = getColumnsPerRow();
-        const productsPerTwoRows = columnsPerRow * 2;
-
-        if (filteredProducts.length > productsPerTwoRows) {
-          if (seeMoreSection) {
-            seeMoreSection.style.display = "block";
-          }
-          // Ensure limited class is applied for initial state
-          productsContainer.classList.add("limited");
-        } else {
-          if (seeMoreSection) {
-            seeMoreSection.style.display = "none";
-          }
-          // Remove limited class if there are few products
-          productsContainer.classList.remove("limited");
-        }
-
-        filteredProducts.forEach((product) => {
-          const productCard = document.createElement("div");
-          productCard.className = "product-card";
-
-          // Create image element with error handling
-          const img = document.createElement("img");
-          img.src = product.images[0] || "placeholder.jpg";
-          img.alt = product.name;
-          img.onerror = function () {
-            this.src = "placeholder.jpg";
-            console.error(`Failed to load image for product: ${product.name}`);
-          };
-
-          productCard.innerHTML = `
-          <div class="product-image">
-            ${img.outerHTML}
-            <div class="wishlist-icon" onclick="event.stopPropagation(); addToWishlist('${
-              product.id
-            }')">
-              <i class="fas fa-heart"></i>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3>${product.name}</h3>
-            <div class="product-price">
-              ${
-                product.salePrice
-                  ? `<span class="sale-price">₹${product.salePrice.toFixed(
-                      2
-                    )}</span>
-                   <span class="original-price">₹${product.price.toFixed(
-                     2
-                   )}</span>`
-                  : `<span>₹${product.price.toFixed(2)}</span>`
-              }
-            </div>
-            <button class="buy-now-btn" onclick="event.stopPropagation(); redirectToWhatsApp('${
-              product.id
-            }', '${product.name}', ${product.salePrice || product.price})">
-              <i class="fab fa-whatsapp"></i> Buy Now
-            </button>
-          </div>
-        `;
-
-          productCard.onclick = () => {
-            // Store product data in localStorage for the product details page
-            localStorage.setItem("currentProduct", JSON.stringify(product));
-            window.location.href = `product-details.html?id=${product.id}`;
-          };
-
-          productsContainer.appendChild(productCard);
-        });
-      }
-
-      // Search functionality
-      function searchProducts(searchTerm, resultsContainer) {
-        try {
-          const results = products.filter((product) =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
-          );
-
-          if (results.length === 0) {
-            resultsContainer.innerHTML =
-              '<div class="search-result-item no-results">No products found</div>';
-          } else {
-            resultsContainer.innerHTML = results
-              .map(
-                (product) => `
-                <div class="search-result-item" onclick="window.location.href='product-details.html?id=${
-                  product.id
-                }'">
-                  <img src="${product.images[0] || "placeholder.jpg"}" alt="${
-                  product.name
-                }">
-                  <div class="product-info">
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-price">
-                      ${
-                        product.salePrice
-                          ? `<span class="sale-price">₹${product.salePrice.toFixed(
-                              2
-                            )}</span>
-                             <span class="original-price">₹${product.price.toFixed(
-                               2
-                             )}</span>`
-                          : `<span>₹${product.price.toFixed(2)}</span>`
-                      }
-                    </div>
-                  </div>
-                </div>
-              `
-              )
-              .join("");
-          }
-          resultsContainer.classList.add("active");
-        } catch (error) {
-          console.error("Error searching products:", error);
-          resultsContainer.innerHTML =
-            '<div class="search-result-item no-results">Error searching products</div>';
-          resultsContainer.classList.add("active");
-        }
-      }
-
       // Initialize everything when the page loads
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize category buttons
-        const categoryButtons = document.querySelectorAll(".category-btn");
-        let currentCategory = "all";
-
-        // Add click event listeners to category buttons
-        if (categoryButtons) {
-          categoryButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-              // Remove active class from all buttons
-              categoryButtons.forEach((btn) => btn.classList.remove("active"));
-              // Add active class to clicked button
-              button.classList.add("active");
-              // Update current category
-              currentCategory = button.dataset.category;
-              // Load products for selected category
-              loadProducts(currentCategory);
-            });
-          });
-        }
-
-        // Initialize search functionality
-        const searchInput = document.getElementById("searchInput");
-        const searchResults = document.getElementById("searchResults");
-        const mobileSearchInput = document.getElementById("mobileSearchInput");
-        const mobileSearchResults = document.getElementById(
-          "mobileSearchResults"
-        );
-        let searchTimeout;
-
-        function handleSearch(input, resultsContainer) {
-          clearTimeout(searchTimeout);
-          const searchTerm = input.value.toLowerCase().trim();
-
-          if (searchTerm.length < 2) {
-            resultsContainer.classList.remove("active");
-            return;
-          }
-
-          searchTimeout = setTimeout(() => {
-            searchProducts(searchTerm, resultsContainer);
-          }, 300);
-        }
-
-        if (searchInput) {
-          searchInput.addEventListener("input", () =>
-            handleSearch(searchInput, searchResults)
-          );
-        }
-
-        if (mobileSearchInput) {
-          mobileSearchInput.addEventListener("input", () =>
-            handleSearch(mobileSearchInput, mobileSearchResults)
-          );
-        }
-
-        // Load initial products
-        loadProducts();
+        // Initialize products functionality
+        initializeProducts();
 
         // Initialize cart
         if (typeof updateCartCount === "function") {
           updateCartCount();
         }
-
-        // Handle window resize for responsive "See More" logic
-        let resizeTimeout;
-        window.addEventListener("resize", () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            // Get current category filter
-            const activeCategory = document.querySelector(
-              ".category-btn.active"
-            );
-            const currentCategory = activeCategory
-              ? activeCategory.dataset.category
-              : "all";
-            loadProducts(currentCategory);
-          }, 250);
-        });
-
-        // Initialize scroll reveal
-        const productsContainer = document.getElementById("productsContainer");
-        if (productsContainer) {
-          function revealOnScroll() {
-            const containerPosition =
-              productsContainer.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-
-            if (containerPosition < screenPosition) {
-              productsContainer.classList.add("active");
-            }
-          }
-
-          window.addEventListener("scroll", revealOnScroll);
-          revealOnScroll();
-        }
       });
+    </script>
+
+    <script>
+      // Product functionality now handled in products.js
     </script>
 
     <script>
@@ -3307,45 +3091,7 @@
         }
       });
 
-      // See More functionality
-      function toggleSeeMore() {
-        const productsContainer = document.getElementById("productsContainer");
-        const seeMoreBtn = document.getElementById("seeMoreBtn");
-        const seeMoreText = seeMoreBtn.querySelector(".see-more-text");
-        const seeMoreSection = document.getElementById("seeMoreSection");
-
-        if (productsContainer.classList.contains("limited")) {
-          // Expand to show all products
-          productsContainer.classList.remove("limited");
-          seeMoreText.textContent = "See Less";
-
-          // Smooth transition
-          productsContainer.style.transition =
-            "max-height 0.8s ease, overflow 0.8s ease";
-
-          // After expansion, ensure no clipping on hover
-          setTimeout(() => {
-            productsContainer.style.overflow = "visible";
-          }, 800);
-        } else {
-          // Collapse to show only 2 rows
-          productsContainer.classList.add("limited");
-          seeMoreText.textContent = "See More";
-
-          // Reset overflow for limited view
-          productsContainer.style.overflow = "hidden";
-          productsContainer.style.transition =
-            "max-height 0.8s ease, overflow 0.8s ease";
-
-          // Scroll back to the products section for better UX
-          setTimeout(() => {
-            document.getElementById("featured-products").scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }, 100);
-        }
-      }
+      // toggleSeeMore function now handled in products.js
     </script>
 
     <!-- Remove Firebase SDK -->
@@ -3375,9 +3121,12 @@
         const mobileSearchContainer = document.querySelector(
           ".mobile-search-container .search-container"
         );
+        const searchResults = document.getElementById("searchResults");
 
         if (!event.target.closest(".header-center .search-container")) {
-          searchResults.classList.remove("active");
+          if (searchResults) {
+            searchResults.classList.remove("active");
+          }
         }
 
         if (
@@ -3731,6 +3480,222 @@
           setTimeout(() => {
             slideNotes(0);
           }, 100);
+        }
+      });
+    </script>
+
+    <!-- Add to Home Screen JavaScript -->
+    <script>
+      // Test function to debug the download button
+      function testDownloadButton() {
+        console.log('Download button clicked!');
+        alert('Download button works! Opening modal...');
+        showAddToHomeScreen();
+      }
+
+      // Add to Home Screen functionality
+      function showAddToHomeScreen() {
+        console.log('showAddToHomeScreen called');
+        const modal = document.getElementById('addToHomeModal');
+        
+        if (!modal) {
+          console.error('Modal not found!');
+          alert('Error: Modal element not found');
+          return;
+        }
+        
+        console.log('Modal found, adding active class');
+        modal.classList.add('active');
+        
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+        
+        // Auto-detect platform and show appropriate tab
+        detectPlatformAndShow();
+        
+        console.log('Modal should be visible now');
+      }
+
+      function closeAddToHomeModal() {
+        const modal = document.getElementById('addToHomeModal');
+        modal.classList.remove('active');
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+      }
+
+      function showPlatform(platform) {
+        try {
+          console.log('showPlatform called with:', platform);
+          
+          // Remove active class from all tabs and contents
+          document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.classList.remove('active');
+          });
+          document.querySelectorAll('.platform-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          // Add active class to selected tab and content
+          if (event && event.target) {
+            event.target.classList.add('active');
+          } else {
+            // Fallback: find the tab by platform
+            const tab = document.querySelector(`[onclick="showPlatform('${platform}')"]`);
+            if (tab) {
+              tab.classList.add('active');
+            }
+          }
+          
+          const content = document.getElementById(platform + '-content');
+          if (content) {
+            content.classList.add('active');
+            console.log('Switched to platform:', platform);
+          } else {
+            console.error('Platform content not found for:', platform);
+          }
+        } catch (error) {
+          console.error('Error in showPlatform:', error);
+        }
+      }
+
+      function detectPlatformAndShow() {
+        try {
+          console.log('detectPlatformAndShow called');
+          const userAgent = navigator.userAgent.toLowerCase();
+          const isMobile = /iphone|ipad|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i.test(userAgent);
+          const isIOS = /iphone|ipad|ipod/.test(userAgent);
+          const isAndroid = /android/.test(userAgent);
+          
+          let platformToShow = 'desktop';
+          
+          if (isIOS) {
+            platformToShow = 'ios';
+          } else if (isAndroid) {
+            platformToShow = 'android';
+          } else if (isMobile) {
+            platformToShow = 'android'; // Default for other mobile devices
+          }
+          
+          console.log('Detected platform:', platformToShow);
+          
+          // Remove active from all
+          document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.classList.remove('active');
+          });
+          document.querySelectorAll('.platform-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          // Show detected platform
+          const platformTab = document.querySelector(`[onclick="showPlatform('${platformToShow}')"]`);
+          const platformContent = document.getElementById(platformToShow + '-content');
+          
+          console.log('Platform tab found:', !!platformTab);
+          console.log('Platform content found:', !!platformContent);
+          
+          if (platformTab && platformContent) {
+            platformTab.classList.add('active');
+            platformContent.classList.add('active');
+            console.log('Platform set to:', platformToShow);
+          } else {
+            console.warn('Could not find platform elements for:', platformToShow);
+          }
+        } catch (error) {
+          console.error('Error in detectPlatformAndShow:', error);
+        }
+      }
+
+      // Close modal when clicking outside
+      document.addEventListener('click', function(event) {
+        const modal = document.getElementById('addToHomeModal');
+        if (event.target === modal) {
+          closeAddToHomeModal();
+        }
+      });
+
+      // Close modal on ESC key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          const modal = document.getElementById('addToHomeModal');
+          if (modal.classList.contains('active')) {
+            closeAddToHomeModal();
+          }
+        }
+      });
+
+      // PWA Install prompt (for supported browsers)
+      let deferredPrompt;
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later
+        deferredPrompt = e;
+        
+        // Update button to show PWA can be installed
+        const installButton = document.querySelector('.download-icon');
+        if (installButton) {
+          installButton.style.display = 'flex';
+          // Change icon to indicate PWA availability
+          const icon = installButton.querySelector('i');
+          if (icon) {
+            icon.className = 'fas fa-plus';
+            icon.title = 'Install App';
+          }
+        }
+      });
+
+      // Handle PWA install
+      function handlePWAInstall() {
+        if (deferredPrompt) {
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the PWA install prompt');
+            } else {
+              console.log('User dismissed the PWA install prompt');
+            }
+            deferredPrompt = null;
+          });
+        } else {
+          // Fallback to showing manual instructions
+          showAddToHomeScreen();
+        }
+      }
+
+      // Track PWA install
+      window.addEventListener('appinstalled', (evt) => {
+        console.log('PWA was installed');
+        // Hide the install button
+        const installButton = document.querySelector('.download-icon');
+        if (installButton) {
+          installButton.style.display = 'none';
+        }
+      });
+
+      // Verify all elements are in place when DOM loads
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Verifying download button elements...');
+        
+        const downloadButton = document.querySelector('.download-icon');
+        const modal = document.getElementById('addToHomeModal');
+        const iosContent = document.getElementById('ios-content');
+        const androidContent = document.getElementById('android-content');
+        const desktopContent = document.getElementById('desktop-content');
+        
+        console.log('Download button found:', !!downloadButton);
+        console.log('Modal found:', !!modal);
+        console.log('iOS content found:', !!iosContent);
+        console.log('Android content found:', !!androidContent);
+        console.log('Desktop content found:', !!desktopContent);
+        
+        if (downloadButton && modal && iosContent && androidContent && desktopContent) {
+          console.log('✅ All download button elements are ready!');
+        } else {
+          console.error('❌ Some download button elements are missing!');
         }
       });
     </script>
