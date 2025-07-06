@@ -1682,19 +1682,19 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #4CAF50, #45a049);
+        background: #333;
         color: white;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         position: relative;
         overflow: hidden;
       }
 
       .download-icon:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-        background: linear-gradient(135deg, #45a049, #4CAF50);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        background: #222;
       }
 
       .download-icon i {
@@ -1706,231 +1706,7 @@
         transform: scale(1.1);
       }
 
-      /* Add to Home Screen Modal */
-      .add-to-home-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-      }
 
-      .add-to-home-modal.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .modal-content {
-        background: #fff;
-        border-radius: 20px;
-        padding: 30px;
-        max-width: 400px;
-        width: 90%;
-        text-align: center;
-        position: relative;
-        transform: scale(0.7) translateY(50px);
-        transition: all 0.3s ease;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      .add-to-home-modal.active .modal-content {
-        transform: scale(1) translateY(0);
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #666;
-        cursor: pointer;
-        transition: color 0.3s ease;
-      }
-
-      .modal-close:hover {
-        color: #333;
-      }
-
-      .modal-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #4CAF50, #45a049);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        color: white;
-        font-size: 32px;
-      }
-
-      .modal-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .modal-text {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        font-size: 1rem;
-      }
-
-      .install-steps {
-        text-align: left;
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 20px 0;
-      }
-
-      .install-steps h4 {
-        color: #333;
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-
-      .install-steps ol {
-        margin: 0;
-        padding-left: 20px;
-      }
-
-      .install-steps li {
-        margin-bottom: 8px;
-        color: #555;
-        font-size: 0.95rem;
-      }
-
-      .platform-tabs {
-        display: flex;
-        background: #f0f0f0;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        overflow: hidden;
-      }
-
-      .platform-tab {
-        flex: 1;
-        padding: 10px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        color: #666;
-      }
-
-      .platform-tab.active {
-        background: #4CAF50;
-        color: white;
-      }
-
-      .platform-content {
-        display: none;
-      }
-
-      .platform-content.active {
-        display: block;
-      }
-
-      .modal-buttons {
-        display: flex;
-        gap: 15px;
-        margin-top: 25px;
-      }
-
-      .modal-btn {
-        flex: 1;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 10px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-      }
-
-      .modal-btn-primary {
-        background: #4CAF50;
-        color: white;
-      }
-
-      .modal-btn-primary:hover {
-        background: #45a049;
-        transform: translateY(-1px);
-      }
-
-      .modal-btn-secondary {
-        background: #f0f0f0;
-        color: #666;
-      }
-
-      .modal-btn-secondary:hover {
-        background: #e0e0e0;
-        color: #555;
-      }
-
-      /* Responsive Design for Modal */
-      @media (max-width: 768px) {
-        .modal-content {
-          padding: 25px 20px;
-          margin: 20px;
-        }
-
-        .modal-title {
-          font-size: 1.3rem;
-        }
-
-        .modal-text {
-          font-size: 0.95rem;
-        }
-
-        .modal-buttons {
-          flex-direction: column;
-        }
-
-        .download-icon {
-          width: 35px;
-          height: 35px;
-        }
-
-        .download-icon i {
-          font-size: 14px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .modal-content {
-          width: 95%;
-          padding: 20px 15px;
-        }
-
-        .modal-icon {
-          width: 60px;
-          height: 60px;
-          font-size: 24px;
-        }
-
-        .install-steps {
-          padding: 15px;
-        }
-      }
     </style>
   </head>
 
@@ -1989,8 +1765,8 @@
         <div class="mobile-search-icon" onclick="toggleMobileSearch()">
           <i class="fas fa-search"></i>
         </div>
-        <div class="download-icon" onclick="testDownloadButton()" title="Add to Home Screen">
-          <i class="fas fa-download"></i>
+        <div class="download-icon" onclick="addToHomeScreen()" title="Add to Home Screen">
+          <i class="fas fa-plus"></i>
         </div>
         <div class="user-icon-container">
           <i class="fas fa-user"></i>
@@ -2831,80 +2607,7 @@
       </div>
     </div>
 
-    <!-- Add to Home Screen Modal -->
-    <div class="add-to-home-modal" id="addToHomeModal">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeAddToHomeModal()" aria-label="Close modal">
-          <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="modal-icon">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-        
-        <h3 class="modal-title">Add Slayyin to Your Home Screen</h3>
-        <p class="modal-text">
-          Install Slayyin for quick access to custom college merchandise and campus essentials!
-        </p>
 
-        <div class="platform-tabs">
-          <button class="platform-tab active" onclick="showPlatform('ios')">
-            <i class="fab fa-apple"></i> iOS
-          </button>
-          <button class="platform-tab" onclick="showPlatform('android')">
-            <i class="fab fa-android"></i> Android
-          </button>
-          <button class="platform-tab" onclick="showPlatform('desktop')">
-            <i class="fas fa-desktop"></i> Desktop
-          </button>
-        </div>
-
-        <div class="platform-content active" id="ios-content">
-          <div class="install-steps">
-            <h4>For iPhone/iPad (Safari):</h4>
-            <ol>
-              <li>Tap the <strong>Share</strong> button <i class="fas fa-share" style="color: #007AFF;"></i></li>
-              <li>Scroll down and tap <strong>"Add to Home Screen"</strong></li>
-              <li>Tap <strong>"Add"</strong> to confirm</li>
-              <li>Find the Slayyin app on your home screen!</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="platform-content" id="android-content">
-          <div class="install-steps">
-            <h4>For Android (Chrome):</h4>
-            <ol>
-              <li>Tap the <strong>Menu</strong> button <i class="fas fa-ellipsis-v" style="color: #4285F4;"></i></li>
-              <li>Select <strong>"Add to Home screen"</strong></li>
-              <li>Enter a name and tap <strong>"Add"</strong></li>
-              <li>Find the Slayyin app on your home screen!</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="platform-content" id="desktop-content">
-          <div class="install-steps">
-            <h4>For Desktop (Chrome/Edge):</h4>
-            <ol>
-              <li>Click the <strong>Install</strong> button in the address bar</li>
-              <li>Or click <strong>Menu</strong> → <strong>"Install Slayyin"</strong></li>
-              <li>Click <strong>"Install"</strong> to confirm</li>
-              <li>Access Slayyin from your desktop!</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="modal-buttons">
-          <button class="modal-btn modal-btn-primary" onclick="closeAddToHomeModal()">
-            Got it!
-          </button>
-          <button class="modal-btn modal-btn-secondary" onclick="closeAddToHomeModal()">
-            Maybe Later
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- Remove references to missing files -->
 
@@ -3486,189 +3189,101 @@
 
     <!-- Add to Home Screen JavaScript -->
     <script>
-      // Test function to debug the download button
-      function testDownloadButton() {
-        console.log('Download button clicked!');
-        alert('Download button works! Opening modal...');
-        showAddToHomeScreen();
-      }
-
-      // Add to Home Screen functionality
-      function showAddToHomeScreen() {
-        console.log('showAddToHomeScreen called');
-        const modal = document.getElementById('addToHomeModal');
+      // Simple notification function
+      function showNotification(message, duration = 3000) {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.9);
+          color: white;
+          padding: 12px 24px;
+          border-radius: 8px;
+          z-index: 10000;
+          font-size: 14px;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          opacity: 0;
+          transition: all 0.3s ease;
+          pointer-events: none;
+        `;
+        notification.textContent = message;
+        document.body.appendChild(notification);
         
-        if (!modal) {
-          console.error('Modal not found!');
-          alert('Error: Modal element not found');
-          return;
-        }
+        // Show notification
+        setTimeout(() => {
+          notification.style.opacity = '1';
+          notification.style.transform = 'translateX(-50%) translateY(0)';
+        }, 100);
         
-        console.log('Modal found, adding active class');
-        modal.classList.add('active');
-        
-        // Prevent body scroll when modal is open
-        document.body.style.overflow = 'hidden';
-        
-        // Auto-detect platform and show appropriate tab
-        detectPlatformAndShow();
-        
-        console.log('Modal should be visible now');
-      }
-
-      function closeAddToHomeModal() {
-        const modal = document.getElementById('addToHomeModal');
-        modal.classList.remove('active');
-        
-        // Restore body scroll
-        document.body.style.overflow = '';
-      }
-
-      function showPlatform(platform) {
-        try {
-          console.log('showPlatform called with:', platform);
-          
-          // Remove active class from all tabs and contents
-          document.querySelectorAll('.platform-tab').forEach(tab => {
-            tab.classList.remove('active');
-          });
-          document.querySelectorAll('.platform-content').forEach(content => {
-            content.classList.remove('active');
-          });
-          
-          // Add active class to selected tab and content
-          if (event && event.target) {
-            event.target.classList.add('active');
-          } else {
-            // Fallback: find the tab by platform
-            const tab = document.querySelector(`[onclick="showPlatform('${platform}')"]`);
-            if (tab) {
-              tab.classList.add('active');
+        // Hide and remove notification
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.style.transform = 'translateX(-50%) translateY(-20px)';
+          setTimeout(() => {
+            if (notification.parentNode) {
+              notification.parentNode.removeChild(notification);
             }
-          }
-          
-          const content = document.getElementById(platform + '-content');
-          if (content) {
-            content.classList.add('active');
-            console.log('Switched to platform:', platform);
-          } else {
-            console.error('Platform content not found for:', platform);
-          }
-        } catch (error) {
-          console.error('Error in showPlatform:', error);
-        }
+          }, 300);
+        }, duration);
       }
 
-      function detectPlatformAndShow() {
-        try {
-          console.log('detectPlatformAndShow called');
-          const userAgent = navigator.userAgent.toLowerCase();
-          const isMobile = /iphone|ipad|ipod|android|blackberry|opera|mini|windows\sce|palm|smartphone|iemobile/i.test(userAgent);
-          const isIOS = /iphone|ipad|ipod/.test(userAgent);
-          const isAndroid = /android/.test(userAgent);
-          
-          let platformToShow = 'desktop';
-          
-          if (isIOS) {
-            platformToShow = 'ios';
-          } else if (isAndroid) {
-            platformToShow = 'android';
-          } else if (isMobile) {
-            platformToShow = 'android'; // Default for other mobile devices
-          }
-          
-          console.log('Detected platform:', platformToShow);
-          
-          // Remove active from all
-          document.querySelectorAll('.platform-tab').forEach(tab => {
-            tab.classList.remove('active');
-          });
-          document.querySelectorAll('.platform-content').forEach(content => {
-            content.classList.remove('active');
-          });
-          
-          // Show detected platform
-          const platformTab = document.querySelector(`[onclick="showPlatform('${platformToShow}')"]`);
-          const platformContent = document.getElementById(platformToShow + '-content');
-          
-          console.log('Platform tab found:', !!platformTab);
-          console.log('Platform content found:', !!platformContent);
-          
-          if (platformTab && platformContent) {
-            platformTab.classList.add('active');
-            platformContent.classList.add('active');
-            console.log('Platform set to:', platformToShow);
-          } else {
-            console.warn('Could not find platform elements for:', platformToShow);
-          }
-        } catch (error) {
-          console.error('Error in detectPlatformAndShow:', error);
-        }
-      }
-
-      // Close modal when clicking outside
-      document.addEventListener('click', function(event) {
-        const modal = document.getElementById('addToHomeModal');
-        if (event.target === modal) {
-          closeAddToHomeModal();
-        }
-      });
-
-      // Close modal on ESC key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          const modal = document.getElementById('addToHomeModal');
-          if (modal.classList.contains('active')) {
-            closeAddToHomeModal();
-          }
-        }
-      });
-
-      // PWA Install prompt (for supported browsers)
+      // PWA Install prompt handler
       let deferredPrompt;
 
       window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        // Prevent Chrome from automatically showing the prompt
         e.preventDefault();
         // Stash the event so it can be triggered later
         deferredPrompt = e;
         
-        // Update button to show PWA can be installed
+        // Show the install button
         const installButton = document.querySelector('.download-icon');
         if (installButton) {
           installButton.style.display = 'flex';
-          // Change icon to indicate PWA availability
-          const icon = installButton.querySelector('i');
-          if (icon) {
-            icon.className = 'fas fa-plus';
-            icon.title = 'Install App';
-          }
         }
       });
 
-      // Handle PWA install
-      function handlePWAInstall() {
+      // Main add to home screen function
+      function addToHomeScreen() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isAndroid = /android/.test(userAgent);
+        const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
+        
+        // Try PWA install first (Chrome, Edge, etc.)
         if (deferredPrompt) {
-          // Show the prompt
           deferredPrompt.prompt();
-          // Wait for the user to respond to the prompt
           deferredPrompt.userChoice.then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the PWA install prompt');
+              showNotification('App installed successfully!');
             } else {
-              console.log('User dismissed the PWA install prompt');
+              showNotification('Installation cancelled');
             }
             deferredPrompt = null;
           });
+          return;
+        }
+        
+        // Platform-specific instructions
+        if (isIOS && isSafari) {
+          showNotification('Tap Share → Add to Home Screen to install', 5000);
+        } else if (isAndroid) {
+          showNotification('Tap Menu → Add to Home Screen to install', 5000);
         } else {
-          // Fallback to showing manual instructions
-          showAddToHomeScreen();
+          // Desktop browsers
+          showNotification('Look for the install button in your browser\'s address bar', 5000);
         }
       }
 
       // Track PWA install
       window.addEventListener('appinstalled', (evt) => {
         console.log('PWA was installed');
+        showNotification('App installed successfully!');
+        
         // Hide the install button
         const installButton = document.querySelector('.download-icon');
         if (installButton) {
@@ -3676,26 +3291,17 @@
         }
       });
 
-      // Verify all elements are in place when DOM loads
+      // Initialize on page load
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('Verifying download button elements...');
+        console.log('Add to Home Screen functionality ready');
         
-        const downloadButton = document.querySelector('.download-icon');
-        const modal = document.getElementById('addToHomeModal');
-        const iosContent = document.getElementById('ios-content');
-        const androidContent = document.getElementById('android-content');
-        const desktopContent = document.getElementById('desktop-content');
-        
-        console.log('Download button found:', !!downloadButton);
-        console.log('Modal found:', !!modal);
-        console.log('iOS content found:', !!iosContent);
-        console.log('Android content found:', !!androidContent);
-        console.log('Desktop content found:', !!desktopContent);
-        
-        if (downloadButton && modal && iosContent && androidContent && desktopContent) {
-          console.log('✅ All download button elements are ready!');
-        } else {
-          console.error('❌ Some download button elements are missing!');
+        // Check if app is already installed
+        if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+          // Hide install button if app is already installed
+          const installButton = document.querySelector('.download-icon');
+          if (installButton) {
+            installButton.style.display = 'none';
+          }
         }
       });
     </script>
