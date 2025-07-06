@@ -1681,29 +1681,25 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        border-radius: 50%;
-        background: #333;
-        color: white;
+        background: transparent;
+        color: #000;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         position: relative;
-        overflow: hidden;
-      }
-
-      .download-icon:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        background: #222;
       }
 
       .download-icon i {
-        font-size: 16px;
-        transition: transform 0.3s ease;
+        font-size: 18px;
+        color: #000;
+        transition: all 0.3s ease;
+      }
+
+      .download-icon:hover {
+        transform: translateY(-2px) scale(1.1);
       }
 
       .download-icon:hover i {
-        transform: scale(1.1);
+        color: #333;
       }
 
 
@@ -1766,7 +1762,7 @@
           <i class="fas fa-search"></i>
         </div>
         <div class="download-icon" onclick="addToHomeScreen()" title="Add to Home Screen">
-          <i class="fas fa-plus"></i>
+          <i class="fa-solid fa-download"></i>
         </div>
         <div class="user-icon-container">
           <i class="fas fa-user"></i>
@@ -3235,6 +3231,9 @@
       let deferredPrompt;
 
       window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('🔧 beforeinstallprompt event fired!');
+        console.log('🔧 Event details:', e);
+        
         // Prevent Chrome from automatically showing the prompt
         e.preventDefault();
         // Stash the event so it can be triggered later
@@ -3244,8 +3243,26 @@
         const installButton = document.querySelector('.download-icon');
         if (installButton) {
           installButton.style.display = 'flex';
+          console.log('🔧 Install button shown');
         }
       });
+
+      // Debug: Check if PWA criteria are met
+      setTimeout(() => {
+        console.log('🔧 PWA Debug Check:');
+        console.log('🔧 Service Worker supported:', 'serviceWorker' in navigator);
+        console.log('🔧 Manifest linked:', !!document.querySelector('link[rel="manifest"]'));
+        console.log('🔧 HTTPS or localhost:', location.protocol === 'https:' || location.hostname === 'localhost');
+        console.log('🔧 Deferred prompt available:', !!deferredPrompt);
+        
+        if (!deferredPrompt) {
+          console.log('🔧 PWA install prompt not available. This might be because:');
+          console.log('🔧 1. Service worker not registered properly');
+          console.log('🔧 2. App already installed');
+          console.log('🔧 3. PWA criteria not met');
+          console.log('🔧 4. Browser doesn\'t support PWA installs');
+        }
+      }, 3000);
 
       // Main add to home screen function
       function addToHomeScreen() {
@@ -3254,10 +3271,16 @@
         const isAndroid = /android/.test(userAgent);
         const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
         
+        console.log('🔧 Add to Home Screen clicked');
+        console.log('🔧 Deferred prompt available:', !!deferredPrompt);
+        console.log('🔧 User agent:', userAgent);
+        
         // Try PWA install first (Chrome, Edge, etc.)
         if (deferredPrompt) {
+          console.log('🔧 Showing PWA install prompt');
           deferredPrompt.prompt();
           deferredPrompt.userChoice.then((choiceResult) => {
+            console.log('🔧 User choice:', choiceResult.outcome);
             if (choiceResult.outcome === 'accepted') {
               showNotification('App installed successfully!');
             } else {
@@ -3268,14 +3291,29 @@
           return;
         }
         
+        // Check if PWA is already installed
+        if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+          showNotification('App is already installed!');
+          return;
+        }
+        
         // Platform-specific instructions
         if (isIOS && isSafari) {
-          showNotification('Tap Share → Add to Home Screen to install', 5000);
+          showNotification('Tap the Share button (↗) at the bottom, then tap "Add to Home Screen"', 7000);
         } else if (isAndroid) {
-          showNotification('Tap Menu → Add to Home Screen to install', 5000);
+          showNotification('Tap the menu (⋮) then "Add to Home screen" or "Install app"', 7000);
         } else {
-          // Desktop browsers
-          showNotification('Look for the install button in your browser\'s address bar', 5000);
+          // Desktop browsers - provide better instructions
+          const isChrome = /chrome/i.test(userAgent);
+          const isEdge = /edge/i.test(userAgent);
+          
+          if (isChrome) {
+            showNotification('Chrome: Look for the install icon (⊞) in the address bar, or Menu → Cast, save and share → Install Slayyin', 8000);
+          } else if (isEdge) {
+            showNotification('Edge: Look for the install icon (⊞) in the address bar, or Menu → Apps → Install this site as an app', 8000);
+          } else {
+            showNotification('To install: Use Chrome or Edge browser, then look for the install button in the address bar', 8000);
+          }
         }
       }
 
@@ -3291,6 +3329,81 @@
         }
       });
 
+      // Manual PWA check function (for debugging)
+      function checkPWAStatus() {
+        console.log('🔧 === PWA Status Check ===');
+        console.log('🔧 Current URL:', window.location.href);
+        console.log('🔧 Protocol:', window.location.protocol);
+        console.log('🔧 Service Worker supported:', 'serviceWorker' in navigator);
+        
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(registrations => {
+            console.log('🔧 Service Worker registrations:', registrations.length);
+            registrations.forEach((reg, index) => {
+              console.log(`🔧 SW ${index + 1}:`, reg.scope, 'State:', reg.active?.state);
+            });
+          });
+        }
+        
+        const manifest = document.querySelector('link[rel="manifest"]');
+        console.log('🔧 Manifest element:', !!manifest);
+        if (manifest) {
+          console.log('🔧 Manifest href:', manifest.href);
+          
+          // Test if manifest is accessible
+          fetch(manifest.href)
+            .then(response => {
+              console.log('🔧 Manifest accessible:', response.ok);
+              return response.json();
+            })
+            .then(data => {
+              console.log('🔧 Manifest data:', data);
+            })
+            .catch(error => {
+              console.error('🔧 Manifest fetch error:', error);
+            });
+        }
+        
+        console.log('🔧 Deferred prompt available:', !!deferredPrompt);
+        console.log('🔧 App already installed:', window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+        
+        return {
+          serviceWorker: 'serviceWorker' in navigator,
+          manifest: !!manifest,
+          deferredPrompt: !!deferredPrompt,
+          installed: window.matchMedia && window.matchMedia('(display-mode: standalone)').matches
+        };
+      }
+
+      // Make it available globally for debugging
+      window.checkPWAStatus = checkPWAStatus;
+
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          console.log('Attempting to register service worker...');
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('✅ ServiceWorker registration successful!');
+              console.log('Scope:', registration.scope);
+              console.log('Registration:', registration);
+              
+              // Check if there's an active service worker
+              if (registration.active) {
+                console.log('Service worker is active');
+              } else {
+                console.log('Service worker is not active yet');
+              }
+            })
+            .catch(function(err) {
+              console.error('❌ ServiceWorker registration failed:', err);
+              console.error('Error details:', err.message);
+            });
+        });
+      } else {
+        console.log('Service Worker not supported in this browser');
+      }
+
       // Initialize on page load
       document.addEventListener('DOMContentLoaded', function() {
         console.log('Add to Home Screen functionality ready');
@@ -3302,6 +3415,21 @@
           if (installButton) {
             installButton.style.display = 'none';
           }
+        }
+
+        // Debug service worker status
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.ready.then(function(registration) {
+            console.log('🔧 Service Worker is ready:', registration);
+            console.log('🔧 Active worker:', registration.active);
+            if (registration.active) {
+              console.log('🔧 Worker state:', registration.active.state);
+            }
+          });
+          
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            console.log('🔧 All service worker registrations:', registrations);
+          });
         }
       });
     </script>
