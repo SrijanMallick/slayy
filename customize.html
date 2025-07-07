@@ -683,8 +683,50 @@
           });
       }
 
-      // Initialize when the DOM is loaded
-      document.addEventListener("DOMContentLoaded", function () {
+      // Page Loader JavaScript
+      document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.getElementById('pageLoader');
+        const progressBar = document.getElementById('progressBar');
+        let progress = 0;
+        
+        // Simulate loading progress
+        const progressInterval = setInterval(() => {
+          progress += Math.random() * 15;
+          if (progress > 90) {
+            progress = 90;
+          }
+          progressBar.style.width = progress + '%';
+        }, 100);
+        
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', function() {
+          // Complete the progress bar
+          progressBar.style.width = '100%';
+          
+          // Wait a moment then hide loader
+          setTimeout(() => {
+            clearInterval(progressInterval);
+            loader.classList.add('hidden');
+            
+            // Remove loader from DOM after transition
+            setTimeout(() => {
+              loader.style.display = 'none';
+            }, 500);
+          }, 300);
+        });
+        
+        // Fallback: hide loader after maximum time
+        setTimeout(() => {
+          if (!loader.classList.contains('hidden')) {
+            clearInterval(progressInterval);
+            progressBar.style.width = '100%';
+            loader.classList.add('hidden');
+            setTimeout(() => {
+              loader.style.display = 'none';
+            }, 500);
+          }
+        }, 5000); // 5 seconds maximum
+
         // Add event listener to form submit button
         document
           .getElementById("customizeForm")
