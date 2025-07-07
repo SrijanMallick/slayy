@@ -1561,118 +1561,151 @@
       /* Responsive Design for Quick Navigation */
       @media (max-width: 768px) {
         .quick-navigation-section {
-          padding: 60px 5%;
+          padding: 50px 4% !important;
         }
 
-        .quick-nav-grid {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 20px;
+        .quick-navigation-section .quick-nav-grid {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+          gap: 15px !important;
+          max-width: 600px !important;
+          margin: 0 auto !important;
         }
 
-        .quick-nav-header {
-          margin-bottom: 40px;
+        .quick-navigation-section .quick-nav-header {
+          margin-bottom: 35px !important;
         }
 
-        .quick-nav-card {
-          padding: 30px 25px;
-          min-height: 280px;
+        .quick-navigation-section .quick-nav-card {
+          padding: 20px 15px !important;
+          min-height: 200px !important;
+          max-width: 250px !important;
+          margin: 0 auto !important;
         }
 
-        .quick-nav-icon {
-          width: 60px;
-          height: 60px;
-          margin-bottom: 20px;
+        .quick-navigation-section .quick-nav-icon {
+          width: 50px !important;
+          height: 50px !important;
+          margin-bottom: 15px !important;
         }
 
-        .quick-nav-icon i {
-          font-size: 24px;
+        .quick-navigation-section .quick-nav-icon i {
+          font-size: 20px !important;
         }
 
-        .quick-nav-card h3 {
-          font-size: 1.3rem;
+        .quick-navigation-section .quick-nav-card h3 {
+          font-size: 1.1rem !important;
+          margin-bottom: 8px !important;
         }
 
-        .quick-nav-card p {
-          font-size: 0.95rem;
+        .quick-navigation-section .quick-nav-card p {
+          font-size: 0.85rem !important;
+          line-height: 1.4 !important;
+          margin-bottom: 15px !important;
         }
 
-        .quick-nav-arrow {
-          width: 40px;
-          height: 40px;
-          bottom: 20px;
-          right: 20px;
+        .quick-navigation-section .quick-nav-arrow {
+          width: 35px !important;
+          height: 35px !important;
+          bottom: 15px !important;
+          right: 15px !important;
         }
 
-        .quick-nav-arrow i {
-          font-size: 14px;
+        .quick-navigation-section .quick-nav-arrow i {
+          font-size: 12px !important;
         }
       }
 
       @media (max-width: 480px) {
         .quick-navigation-section {
-          padding: 40px 3%;
+          padding: 40px 3% !important;
         }
 
-        .quick-nav-grid {
-          grid-template-columns: 1fr;
-          gap: 15px;
+        .quick-navigation-section .quick-nav-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 12px !important;
+          max-width: 100% !important;
         }
 
-        .quick-nav-card {
-          padding: 25px 20px;
-          min-height: 260px;
+        .quick-navigation-section .quick-nav-card {
+          padding: 18px 12px !important;
+          min-height: 160px !important;
+          max-width: none !important;
+          border-radius: 16px !important;
         }
 
-        .quick-nav-icon {
-          width: 55px;
-          height: 55px;
-          margin-bottom: 18px;
+        .quick-navigation-section .quick-nav-icon {
+          width: 40px !important;
+          height: 40px !important;
+          margin-bottom: 12px !important;
         }
 
-        .quick-nav-icon i {
-          font-size: 22px;
+        .quick-navigation-section .quick-nav-icon i {
+          font-size: 16px !important;
         }
 
-        .quick-nav-card h3 {
-          font-size: 1.2rem;
+        .quick-navigation-section .quick-nav-card h3 {
+          font-size: 0.95rem !important;
+          margin-bottom: 6px !important;
+          line-height: 1.2 !important;
         }
 
-        .quick-nav-card p {
-          font-size: 0.9rem;
-          margin-bottom: 20px;
+        .quick-navigation-section .quick-nav-card p {
+          font-size: 0.75rem !important;
+          line-height: 1.3 !important;
+          margin-bottom: 12px !important;
+        }
+
+        .quick-navigation-section .quick-nav-arrow {
+          width: 28px !important;
+          height: 28px !important;
+          bottom: 12px !important;
+          right: 12px !important;
+        }
+
+        .quick-navigation-section .quick-nav-arrow i {
+          font-size: 10px !important;
         }
       }
 
-      /* Alternative mobile layout - horizontal scroll if preferred */
-      @media (max-width: 480px) {
-        .quick-nav-grid-mobile-scroll {
-          display: flex;
-          overflow-x: auto;
-          gap: 20px;
-          padding-bottom: 20px;
-          scroll-snap-type: x mandatory;
+      @media (max-width: 380px) {
+        .quick-navigation-section .quick-nav-card {
+          padding: 15px 10px !important;
+          min-height: 145px !important;
         }
 
-        .quick-nav-grid-mobile-scroll .quick-nav-card {
-          min-width: 280px;
-          flex-shrink: 0;
-          scroll-snap-align: start;
+        .quick-navigation-section .quick-nav-icon {
+          width: 35px !important;
+          height: 35px !important;
+          margin-bottom: 10px !important;
         }
 
-        .quick-nav-grid-mobile-scroll::-webkit-scrollbar {
-          height: 6px;
+        .quick-navigation-section .quick-nav-icon i {
+          font-size: 14px !important;
         }
 
-        .quick-nav-grid-mobile-scroll::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.1);
-          border-radius: 3px;
+        .quick-navigation-section .quick-nav-card h3 {
+          font-size: 0.9rem !important;
+          margin-bottom: 5px !important;
         }
 
-        .quick-nav-grid-mobile-scroll::-webkit-scrollbar-thumb {
-          background: rgba(0, 0, 0, 0.3);
-          border-radius: 3px;
+        .quick-navigation-section .quick-nav-card p {
+          font-size: 0.7rem !important;
+          margin-bottom: 10px !important;
+        }
+
+        .quick-navigation-section .quick-nav-arrow {
+          width: 25px !important;
+          height: 25px !important;
+          bottom: 10px !important;
+          right: 10px !important;
+        }
+
+        .quick-navigation-section .quick-nav-arrow i {
+          font-size: 9px !important;
         }
       }
+
+
 
       /* Download/Add to Home Screen Styles */
       .download-icon {
@@ -1700,6 +1733,120 @@
 
       .download-icon:hover i {
         color: #333;
+      }
+
+      /* MOBILE OVERRIDE STYLES - FINAL VERSION */
+      @media screen and (max-width: 768px) {
+        #quick-navigation .quick-nav-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+          gap: 15px !important;
+          max-width: 500px !important;
+          margin: 0 auto !important;
+        }
+        
+        #quick-navigation .quick-nav-card {
+          padding: 20px 15px !important;
+          min-height: 180px !important;
+          max-width: 220px !important;
+          margin: 0 auto !important;
+        }
+        
+        #quick-navigation .quick-nav-icon {
+          width: 45px !important;
+          height: 45px !important;
+          margin-bottom: 12px !important;
+        }
+        
+        #quick-navigation .quick-nav-icon i {
+          font-size: 18px !important;
+        }
+        
+        #quick-navigation .quick-nav-card h3 {
+          font-size: 1rem !important;
+          margin-bottom: 6px !important;
+          line-height: 1.2 !important;
+        }
+        
+        #quick-navigation .quick-nav-card p {
+          font-size: 0.8rem !important;
+          line-height: 1.3 !important;
+          margin-bottom: 12px !important;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        #quick-navigation .quick-nav-grid {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 10px !important;
+          max-width: 100% !important;
+        }
+        
+        #quick-navigation .quick-nav-card {
+          padding: 15px 10px !important;
+          min-height: 140px !important;
+          max-width: none !important;
+          border-radius: 12px !important;
+        }
+        
+        #quick-navigation .quick-nav-icon {
+          width: 35px !important;
+          height: 35px !important;
+          margin-bottom: 8px !important;
+        }
+        
+        #quick-navigation .quick-nav-icon i {
+          font-size: 14px !important;
+        }
+        
+        #quick-navigation .quick-nav-card h3 {
+          font-size: 0.85rem !important;
+          margin-bottom: 4px !important;
+          line-height: 1.1 !important;
+        }
+        
+        #quick-navigation .quick-nav-card p {
+          font-size: 0.7rem !important;
+          line-height: 1.2 !important;
+          margin-bottom: 8px !important;
+        }
+        
+        #quick-navigation .quick-nav-arrow {
+          width: 24px !important;
+          height: 24px !important;
+          bottom: 8px !important;
+          right: 8px !important;
+        }
+        
+        #quick-navigation .quick-nav-arrow i {
+          font-size: 8px !important;
+        }
+      }
+
+      @media screen and (max-width: 360px) {
+        #quick-navigation .quick-nav-card {
+          padding: 12px 8px !important;
+          min-height: 120px !important;
+        }
+        
+        #quick-navigation .quick-nav-icon {
+          width: 30px !important;
+          height: 30px !important;
+          margin-bottom: 6px !important;
+        }
+        
+        #quick-navigation .quick-nav-icon i {
+          font-size: 12px !important;
+        }
+        
+        #quick-navigation .quick-nav-card h3 {
+          font-size: 0.75rem !important;
+          margin-bottom: 3px !important;
+        }
+        
+        #quick-navigation .quick-nav-card p {
+          font-size: 0.65rem !important;
+          margin-bottom: 6px !important;
+        }
       }
 
 
@@ -3229,6 +3376,7 @@
 
       // PWA Install prompt handler
       let deferredPrompt;
+      let installPromptAvailable = false;
 
       window.addEventListener('beforeinstallprompt', (e) => {
         console.log('🔧 beforeinstallprompt event fired!');
@@ -3238,29 +3386,71 @@
         e.preventDefault();
         // Stash the event so it can be triggered later
         deferredPrompt = e;
+        installPromptAvailable = true;
         
-        // Show the install button
+        // Show the install button and make it more prominent on mobile
         const installButton = document.querySelector('.download-icon');
         if (installButton) {
           installButton.style.display = 'flex';
           console.log('🔧 Install button shown');
+          
+          // Add a subtle animation to indicate installation is available
+          installButton.style.animation = 'pulse 2s infinite';
+          
+          // Create pulse animation if it doesn't exist
+          if (!document.querySelector('#pulse-animation')) {
+            const style = document.createElement('style');
+            style.id = 'pulse-animation';
+            style.textContent = `
+              @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+              }
+            `;
+            document.head.appendChild(style);
+          }
         }
       });
 
-      // Debug: Check if PWA criteria are met
+      // Debug: Check if PWA criteria are met and setup mobile-specific handling
       setTimeout(() => {
         console.log('🔧 PWA Debug Check:');
         console.log('🔧 Service Worker supported:', 'serviceWorker' in navigator);
         console.log('🔧 Manifest linked:', !!document.querySelector('link[rel="manifest"]'));
         console.log('🔧 HTTPS or localhost:', location.protocol === 'https:' || location.hostname === 'localhost');
         console.log('🔧 Deferred prompt available:', !!deferredPrompt);
+        console.log('🔧 User agent:', navigator.userAgent);
         
-        if (!deferredPrompt) {
+        // Check if already installed
+        const isInstalled = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+        console.log('🔧 App already installed:', isInstalled);
+        
+        if (!deferredPrompt && !isInstalled) {
           console.log('🔧 PWA install prompt not available. This might be because:');
           console.log('🔧 1. Service worker not registered properly');
-          console.log('🔧 2. App already installed');
-          console.log('🔧 3. PWA criteria not met');
-          console.log('🔧 4. Browser doesn\'t support PWA installs');
+          console.log('🔧 2. PWA criteria not fully met');
+          console.log('🔧 3. Browser doesn\'t support PWA installs');
+          console.log('🔧 4. Prompt may arrive later (especially on mobile)');
+          
+          // On mobile, the prompt might come later, so we set up a longer wait
+          const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
+          if (isMobile) {
+            console.log('🔧 Mobile detected - setting up extended wait for install prompt');
+            
+            // Wait longer for mobile install prompt
+            setTimeout(() => {
+              if (deferredPrompt) {
+                console.log('🔧 Late install prompt detected on mobile');
+                const installButton = document.querySelector('.download-icon');
+                if (installButton) {
+                  installButton.style.display = 'flex';
+                }
+              } else {
+                console.log('🔧 Install prompt still not available after extended wait');
+              }
+            }, 8000);
+          }
         }
       }, 3000);
 
@@ -3270,26 +3460,13 @@
         const isIOS = /iphone|ipad|ipod/.test(userAgent);
         const isAndroid = /android/.test(userAgent);
         const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
+        const isChrome = /chrome/i.test(userAgent);
+        const isMobile = isIOS || isAndroid;
         
         console.log('🔧 Add to Home Screen clicked');
         console.log('🔧 Deferred prompt available:', !!deferredPrompt);
         console.log('🔧 User agent:', userAgent);
-        
-        // Try PWA install first (Chrome, Edge, etc.)
-        if (deferredPrompt) {
-          console.log('🔧 Showing PWA install prompt');
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            console.log('🔧 User choice:', choiceResult.outcome);
-            if (choiceResult.outcome === 'accepted') {
-              showNotification('App installed successfully!');
-            } else {
-              showNotification('Installation cancelled');
-            }
-            deferredPrompt = null;
-          });
-          return;
-        }
+        console.log('🔧 Is mobile:', isMobile);
         
         // Check if PWA is already installed
         if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
@@ -3297,37 +3474,112 @@
           return;
         }
         
-        // Platform-specific instructions
-        if (isIOS && isSafari) {
-          showNotification('Tap the Share button (↗) at the bottom, then tap "Add to Home Screen"', 7000);
-        } else if (isAndroid) {
-          showNotification('Tap the menu (⋮) then "Add to Home screen" or "Install app"', 7000);
+        // Try PWA install prompt first (works on Chrome mobile and desktop)
+        if (deferredPrompt) {
+          console.log('🔧 Showing PWA install prompt');
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            console.log('🔧 User choice:', choiceResult.outcome);
+            if (choiceResult.outcome === 'accepted') {
+              showNotification('🎉 App installed successfully!');
+            } else {
+              showNotification('Installation cancelled');
+            }
+            deferredPrompt = null;
+          }).catch((error) => {
+            console.error('🔧 Error showing install prompt:', error);
+            fallbackInstallInstructions();
+          });
+          return;
+        }
+        
+        // If no prompt available, try alternative methods for mobile
+        if (isMobile) {
+          // Wait a bit and try to trigger the prompt
+          setTimeout(() => {
+            if (deferredPrompt) {
+              console.log('🔧 Delayed prompt available, showing now');
+              deferredPrompt.prompt();
+              deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                  showNotification('🎉 App installed successfully!');
+                } else {
+                  showNotification('Installation cancelled');
+                }
+                deferredPrompt = null;
+              });
+              return;
+            }
+            
+            // Still no prompt available, provide instructions
+            fallbackInstallInstructions();
+          }, 500);
         } else {
-          // Desktop browsers - provide better instructions
-          const isChrome = /chrome/i.test(userAgent);
-          const isEdge = /edge/i.test(userAgent);
-          
-          if (isChrome) {
-            showNotification('Chrome: Look for the install icon (⊞) in the address bar, or Menu → Cast, save and share → Install Slayyin', 8000);
-          } else if (isEdge) {
-            showNotification('Edge: Look for the install icon (⊞) in the address bar, or Menu → Apps → Install this site as an app', 8000);
-          } else {
-            showNotification('To install: Use Chrome or Edge browser, then look for the install button in the address bar', 8000);
-          }
+          fallbackInstallInstructions();
+        }
+      }
+      
+      // Fallback instructions when PWA prompt is not available
+      function fallbackInstallInstructions() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isAndroid = /android/.test(userAgent);
+        const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
+        const isChrome = /chrome/i.test(userAgent);
+        const isEdge = /edge/i.test(userAgent);
+        
+        console.log('🔧 Falling back to manual instructions');
+        
+        if (isIOS && isSafari) {
+          showNotification('📱 Safari: Tap Share (↗) → Add to Home Screen', 7000);
+        } else if (isAndroid && isChrome) {
+          showNotification('📱 Chrome: Tap Menu (⋮) → Add to Home screen', 7000);
+        } else if (isAndroid) {
+          showNotification('📱 Tap browser menu → Add to Home screen or Install app', 7000);
+        } else if (isChrome) {
+          showNotification('💻 Chrome: Look for install icon (⊞) in address bar', 8000);
+        } else if (isEdge) {
+          showNotification('💻 Edge: Menu → Apps → Install this site as an app', 8000);
+        } else {
+          showNotification('💻 Use Chrome or Edge for direct app installation', 8000);
         }
       }
 
       // Track PWA install
       window.addEventListener('appinstalled', (evt) => {
-        console.log('PWA was installed');
-        showNotification('App installed successfully!');
+        console.log('🔧 PWA was installed successfully');
+        showNotification('🎉 App installed successfully!');
         
-        // Hide the install button
+        // Hide the install button and remove animations
         const installButton = document.querySelector('.download-icon');
         if (installButton) {
           installButton.style.display = 'none';
+          installButton.style.animation = 'none';
         }
+        
+        // Clear the deferred prompt
+        deferredPrompt = null;
+        installPromptAvailable = false;
       });
+      
+      // Additional event listener for when service worker is controlling the page
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          console.log('🔧 Service worker controller changed - checking for install prompt');
+          
+          // Wait a bit then check if prompt is now available
+          setTimeout(() => {
+            if (deferredPrompt && !installPromptAvailable) {
+              installPromptAvailable = true;
+              const installButton = document.querySelector('.download-icon');
+              if (installButton) {
+                installButton.style.display = 'flex';
+                installButton.style.animation = 'pulse 2s infinite';
+              }
+            }
+          }, 1000);
+        });
+      }
 
       // Manual PWA check function (for debugging)
       function checkPWAStatus() {
@@ -3382,7 +3634,7 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
           console.log('Attempting to register service worker...');
-          navigator.serviceWorker.register('/service-worker.js')
+          navigator.serviceWorker.register('./service-worker.js')
             .then(function(registration) {
               console.log('✅ ServiceWorker registration successful!');
               console.log('Scope:', registration.scope);
@@ -3394,6 +3646,9 @@
               } else {
                 console.log('Service worker is not active yet');
               }
+              
+              // Force update check
+              registration.update();
             })
             .catch(function(err) {
               console.error('❌ ServiceWorker registration failed:', err);
@@ -3406,14 +3661,22 @@
 
       // Initialize on page load
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('Add to Home Screen functionality ready');
+        console.log('🔧 Add to Home Screen functionality ready');
         
-        // Check if app is already installed
-        if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+        const installButton = document.querySelector('.download-icon');
+        const isInstalled = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+        
+        if (isInstalled) {
           // Hide install button if app is already installed
-          const installButton = document.querySelector('.download-icon');
           if (installButton) {
             installButton.style.display = 'none';
+          }
+          console.log('🔧 App is already installed, hiding install button');
+        } else {
+          // Show install button for non-installed app
+          if (installButton) {
+            installButton.style.display = 'flex';
+            console.log('🔧 App not installed, showing install button');
           }
         }
 
@@ -3425,12 +3688,77 @@
             if (registration.active) {
               console.log('🔧 Worker state:', registration.active.state);
             }
+            
+            // After service worker is ready, check for install prompt again
+            setTimeout(() => {
+              if (deferredPrompt && installButton) {
+                installButton.style.animation = 'pulse 2s infinite';
+                console.log('🔧 Install prompt available after service worker ready');
+              }
+            }, 1000);
           });
           
           navigator.serviceWorker.getRegistrations().then(function(registrations) {
             console.log('🔧 All service worker registrations:', registrations);
           });
         }
+        
+        // Force a check for the install prompt after DOM is ready
+        setTimeout(() => {
+          if (!deferredPrompt && !isInstalled) {
+            console.log('🔧 Checking PWA criteria manually...');
+            
+            // Verify all PWA requirements
+            const hasServiceWorker = 'serviceWorker' in navigator;
+            const manifestElement = document.querySelector('link[rel="manifest"]');
+            const hasManifest = !!manifestElement;
+            const isSecure = location.protocol === 'https:' || location.hostname === 'localhost';
+            
+            console.log('🔧 PWA Requirements Check:');
+            console.log('🔧 - Service Worker supported:', hasServiceWorker);
+            console.log('🔧 - Manifest linked:', hasManifest);
+            console.log('🔧 - Secure context:', isSecure);
+            
+            if (manifestElement) {
+              console.log('🔧 - Manifest URL:', manifestElement.href);
+              
+              // Test if manifest is accessible and valid
+              fetch(manifestElement.href)
+                .then(response => {
+                  console.log('🔧 - Manifest fetch status:', response.ok);
+                  return response.json();
+                })
+                .then(manifest => {
+                  console.log('🔧 - Manifest content:', manifest);
+                  console.log('🔧 - Icons defined:', manifest.icons?.length || 0);
+                  
+                  // Test icon accessibility
+                  if (manifest.icons && manifest.icons.length > 0) {
+                    manifest.icons.forEach((icon, index) => {
+                      const iconUrl = new URL(icon.src, window.location.href).href;
+                      console.log(`🔧 - Testing icon ${index + 1}: ${iconUrl}`);
+                      
+                      // Test if icon is accessible
+                      fetch(iconUrl, { method: 'HEAD' })
+                        .then(response => {
+                          console.log(`🔧 - Icon ${index + 1} (${icon.sizes}) accessible:`, response.ok);
+                        })
+                        .catch(error => {
+                          console.error(`🔧 - Icon ${index + 1} (${icon.sizes}) failed:`, error);
+                        });
+                    });
+                  }
+                })
+                .catch(error => {
+                  console.error('🔧 - Manifest fetch error:', error);
+                });
+            }
+            
+            if (hasServiceWorker && hasManifest && isSecure) {
+              console.log('🔧 All PWA requirements met, prompt should be available');
+            }
+          }
+        }, 2000);
       });
     </script>
 
