@@ -1,10 +1,14 @@
-const CACHE_NAME = 'slayyin-v1';
+const CACHE_NAME = 'slayyin-v3';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/index.css',
-  '/products.js',
-  '/website-logo.png'
+  './',
+  './index.html',
+  './index.css',
+  './products.js',
+  './website-logo.png',
+  './favicon_io (2)/android-chrome-192x192.png',
+  './favicon_io (2)/android-chrome-512x512.png',
+  './favicon_io (2)/apple-touch-icon.png',
+  './favicon_io (2)/site.webmanifest'
 ];
 
 console.log('🔧 Service Worker: Starting with cache name:', CACHE_NAME);
